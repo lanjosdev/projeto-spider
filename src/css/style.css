@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: auto;
+    /* background-color: #255e25; */
+}
+
+main:after {
+    content: '';
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.9248074229691877) 0%, rgba(0,0,0,0.22172619047619047) 36%, rgba(0,0,0,0.6166841736694677) 100%);
+    z-index: -1;
+}
+
+
+.carrossel {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column; /* Centraliza Verticalmente uniformimente com column+space-evenly*/
+    justify-content: space-evenly; /* Centraliza Verticalmente uniformimente com colspace-evenly*/
+}
+
+.info-carrossel .logo-titulo {
+    max-width: 350px;
+    margin-bottom: 80px;
+    display: none;
+}
+.info-carrossel .logo-titulo.ativaH {
+    display: block;
+}
+
+
+.info-carrossel .descricao {
+    width: 49%;
+    font-size: 24px;
+    color: #fff;
+    line-height: 30px;
+    display: none;
+}
+.info-carrossel .descricao.ativaD {
+    display: block;
+}
+
+
+
+
+
+.botoes-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.botoes-carrossel .botao {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    border: 2px solid transparent;
+    border-color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+
+
+    display: none;
+}
+.botoes-carrossel .botao:hover {
+    transform: scale(1.2); /*aumentaa*/
+}
+.botoes-carrossel .botao.selecionado {
+    background-color: #555753;
+
+
+    
+    display: none;
+}
+
+/* ======================= Lateral Redes ======================= */
+.lateral-redes {
+    width: 80px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center; /*Centraliza Horizontalmente pois o disply flex como padrao é "row"*/
+    min-height: 100vh;
+    align-items: center; /* Alinha o menu lateral na verticalemnte */
+}
+
+.lateral-redes .icon-redes {
+    width: 44px;
+    transition: 0.3s ease-in-out;
+    opacity: 0.5;
+}
+.lateral-redes .icon-redes.selecionadu {
+    opacity: 1;   
+}
+.lateral-redes .icon-redes:hover {
+    transform: scale(1.2); /* aumentaa */
+    cursor: pointer;
+    /* opacity: 1; */
+}
+.lateral-redes .icon-redes:active {
+    transform: scale(1.4);
+}
+
+.lateral-redes ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+
+
+.bg-carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    display: none;
+}
+.bg-carrossel.ativabg {
+    display: block;
+}
+
+
+.bg-carrossel .imgPeter, .bg-carrossel .imgMiles {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+.bg-carrossel .imgPeter.ativa, .bg-carrossel .imgMiles.ativa {
+    display: block;
+}
+@keyframes mudarImagem {
+    from {
+        opacity: 0.85;
+    }
+    to {
+        opacity: 1;
+    }
+}
